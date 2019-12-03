@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body_content %}
+	<h1>Home Page</h1>
+	<p>Welcome to this web app!</p>
+	{% for post in posts %} 
+		<div> 
+			<h3>{{ post.title }}</h3>
+			<p><b>by </b>{{ post.author.first_name }} {{ post.author.last_name }}</p>
+			<p><b>on the </b>{{ post.date_posted }}</p>
+			<p>{{ post.content }}</p>
+		</div>
+	{% endfor %}
+	<a href="{{ url_for('register') }}">Register with us!</a>
+{% endblock body_content%}
